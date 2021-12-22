@@ -92,6 +92,6 @@ Ramp3: 106.9
 
 # 站点
 
-[AX3.5站点](stations\obixServer35)
+[AX3.5站点](stations/obixServer35)
 
-[N4.11站点](stations\obixServer411)
+[N4.11站点](stations/obixServer411)
