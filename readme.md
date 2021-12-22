@@ -14,7 +14,7 @@
 
 ## 位置
 
-[postman\oBIX - Training.postman_collection.json](postman\oBIX - Training.postman_collection.json)
+[postman\oBIX - Training.postman_collection.json](postman/oBIX - Training.postman_collection.json)
 
 
 
@@ -30,7 +30,7 @@
 
 ## 位置
 
-[csharp\oBIXClient](csharp\oBIXClient)
+[csharp\oBIXClient](csharp/oBIXClient)
 
 ## 说明
 
@@ -48,7 +48,7 @@
 
 ## 位置
 
-[python\obixBatchRead.py](python\obixBatchRead.py)
+[python\obixBatchRead.py](python/obixBatchRead.py)
 
 ## 说明
 
