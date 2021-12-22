@@ -1,0 +1,100 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=pie-simple
+-->
+<!-- @noSnoop -->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        <script type="text/javascript" src="/file/echarts.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+option = {
+  xAxis: {
+    type: 'category',
+    data: ['Ramp1', 'Ramp2', 'Ramp3']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [50, 50, 50],
+      type: 'bar'
+    }
+  ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+//定时器，用于定时刷新饼图
+setInterval(function () {
+  update();
+},2000);
+
+function update(){
+  // 从 postman 复制
+  var settings = {
+    "url": "/obix/batch/",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "text/plain",
+    },
+    "data": "<list is=\"obix:BatchIn\"> \r\n  <uri is=\"obix:Read\" val=\"/obix/config/data/Ramp1/out/value/\" />\r\n  <uri is=\"obix:Read\" val=\"/obix/config/data/Ramp2/out/value/\" />\r\n  <uri is=\"obix:Read\" val=\"/obix/config/data/Ramp3/out/value/\" />\r\n</list>\r\n",
+  };
+  
+  // 本站点内的访问无需再登录，因为打开网页时已经登录过了
+  $.ajax(settings).done(function (response) {
+    //console.log(response);
+    // jQuery 可以按 DOM 方式直接解析 xml
+    var data = $(response).find("real");
+    if(data.length==3){
+      if(!isEmpty(data[0].getAttribute("display"))) option.series[0].data[0] = data[0].getAttribute("display");
+      if(!isEmpty(data[1].getAttribute("display"))) option.series[0].data[1] = data[1].getAttribute("display");
+      if(!isEmpty(data[2].getAttribute("display"))) option.series[0].data[2] = data[2].getAttribute("display");
+      myChart.setOption(option);
+    }
+  });
+
+}
+function isEmpty(obj){
+ return (typeof obj === 'undefined' || obj === null || obj === "");
+}
+        </script>
+    </body>
+</html>
+    

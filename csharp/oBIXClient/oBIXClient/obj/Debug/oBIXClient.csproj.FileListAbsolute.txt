@@ -1,0 +1,13 @@
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\bin\Debug\oBIXClient.exe.config
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\bin\Debug\oBIXClient.exe
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\bin\Debug\oBIXClient.pdb
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\bin\Debug\RestSharp.dll
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\bin\Debug\RestSharp.xml
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.Form1.resources
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.Properties.Resources.resources
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.csproj.GenerateResource.cache
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.csproj.CoreCompileInputs.cache
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.csproj.CopyComplete
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.exe
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.pdb
+C:\Users\E597055\source\repos\oBIXClient\oBIXClient\obj\Debug\oBIXClient.csprojAssemblyReference.cache

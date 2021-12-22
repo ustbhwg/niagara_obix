@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Niagara Presentation XML -->
+<px version="1.0" media="uxBuilder:UxMedia">
+<import>
+  <module name="baja"/>
+  <module name="bajaui"/>
+  <module name="converters"/>
+  <module name="gx"/>
+  <module name="jxBrowser"/>
+  <module name="kitPx"/>
+  <module name="workbench"/>
+</import>
+<content>
+<ScrollPane>
+
+  <CanvasPane name="content" viewSize="900.0,500.0" scale="fit" minScaleFactor="0.5" maxScaleFactor="1.0" background="radialGradient( stop(0.0% #c0ffff) stop(100.0% white) )">
+
+    <WebBrowser layout="10.0,190.0,430.0,300.0" ord="https://localhost/ord/file:%5Ehtml/pie-simple.html%7Cview:webEditors:HtmlViewer|view:?fullScreen=true;previewMedia=true"/>
+
+    <Label layout="90.0,80.0,100.0,20.0" text="Ramp1" halign="left"/>
+
+    <BoundLabel layout="190.0,80.0,100.0,20.0">
+      <BoundLabelBinding ord="station:|slot:/data/Ramp1" statusEffect="none">
+        <ObjectToString name="text" format="%out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <Label layout="90.0,100.0,100.0,20.0" text="Ramp2" halign="left"/>
+
+    <BoundLabel layout="190.0,100.0,100.0,20.0">
+      <BoundLabelBinding ord="station:|slot:/data/Ramp2" statusEffect="none">
+        <ObjectToString name="text" format="%out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <Label layout="90.0,120.0,100.0,20.0" text="Ramp3" halign="left"/>
+
+    <BoundLabel layout="190.0,120.0,100.0,20.0">
+      <BoundLabelBinding ord="station:|slot:/data/Ramp3" statusEffect="none">
+        <ObjectToString name="text" format="%out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <Label layout="210.0,160.0,190.0,30.0" text="echarts &#x539f;&#x59cb;&#x94fe;&#x63a5;">
+      <ValueBinding hyperlink="https://echarts.apache.org/examples/zh/editor.html?c=pie-simple"/>
+    </Label>
+
+    <Label layout="370.0,0.0,300.0,70.0" text="PX&#x7ec4;&#x6001;&#x9875;&#x9762;" font="48.0pt SansSerif"/>
+
+    <WebBrowser layout="460.0,190.0,430.0,300.0" ord="https://localhost/ord/file:%5Ehtml/bar-simple.html%7Cview:webEditors:HtmlViewer|view:?fullScreen=true;previewMedia=true"/>
+
+    <Label layout="610.0,160.0,190.0,30.0" text="echarts &#x539f;&#x59cb;&#x94fe;&#x63a5;">
+      <ValueBinding hyperlink="https://echarts.apache.org/examples/zh/editor.html?c=bar-simple"/>
+    </Label>
+
+    <Label layout="470.0,70.0,300.0,30.0" text="&#x2014;&#x2014; oBIX&#x7684;&#x524d;&#x7aef;&#x4f7f;&#x7528;&#x793a;&#x4f8b;" font="24.0pt SansSerif"/>
+
+  </CanvasPane>
+
+</ScrollPane>
+</content>
+</px>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Niagara Presentation XML -->
+<px version="1.0" media="workbench:WbPxMedia">
+<import>
+  <module name="baja"/>
+  <module name="bajaui"/>
+  <module name="gx"/>
+  <module name="jxBrowser"/>
+  <module name="kitPx"/>
+  <module name="workbench"/>
+</import>
+<content>
+<ScrollPane>
+
+  <CanvasPane name="content" viewSize="1000.0,800.0" scale="fitRatio" minScaleFactor="0.5" maxScaleFactor="1.0">
+
+    <WebWidget layout="0.0,40.0,880.0,760.0" js="view:schedule:WebScheduler">
+      <Boolean name="enabled" f="3" value="true"/>
+      <WbViewBinding ord="station:|slot:/Drivers/ObixNetwork/AXStation/points/Setpoint"/>
+    </WebWidget>
+
+    <ImageButton layout="200.0,10.0,130.0,40.0" text="&#x6e29;&#x5ea6;&#x8bbe;&#x5b9a;" font="18.0pt SansSerif">
+      <ActionBinding ord="station:|slot:/Drivers/ObixNetwork/AXStation/points/sp/Set" widgetEvent="actionPerformed"/>
+    </ImageButton>
+
+  </CanvasPane>
+
+</ScrollPane>
+</content>
+</px>

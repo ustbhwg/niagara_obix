@@ -1,0 +1,1702 @@
+{
+	"info": {
+		"_postman_id": "5e81119e-be1e-43b8-a292-e81de6371a3a",
+		"name": "oBIX - Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Watch",
+			"item": [
+				{
+					"name": "Watch-创建",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/make/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"make",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watch-设置全局lease时间",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<reltime val=\"PT5H0S\"/>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/watchService/defaultLeaseTime/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"defaultLeaseTime",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watch-设置自己的lease时间",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<reltime val=\"PT8H0S\"/>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/lease/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"lease",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watch-添加订阅的数据",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:WatchIn\">\r\n  <list names=\"hrefs\">\r\n    <uri val=\"/obix/config/publicData/input/out/\" />\r\n    <uri val=\"/obix/config/publicData/Ramp/out/\" />\r\n  </list>\r\n</obj>\r\n"
+						},
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watch-Poll Changes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/pollChanges/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"pollChanges",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watch-Poll Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/pollRefresh/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"pollRefresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alarm",
+			"item": [
+				{
+					"name": "Alarm-创建Watch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/make/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"make",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm 订阅照明系统",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:WatchIn\">\r\n  <list names=\"hrefs\">\r\n    <uri val=\"/obix/config/Services/AlarmService/Lighting/~alarmFeed/\" />\r\n  </list>\r\n</obj>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm 订阅全部",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:WatchIn\">\r\n  <list names=\"hrefs\">\r\n    <uri val=\"/obix/config/Services/AlarmService/Lighting/~alarmFeed/\" />\r\n  </list>\r\n</obj>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm-Poll Changes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/pollChanges/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"pollChanges",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm-Poll Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/pollRefresh/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"pollRefresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm-查询照明系统全部报警",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/obix/config/Services/AlarmService/Lighting/~alarmQuery/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"config",
+								"Services",
+								"AlarmService",
+								"Lighting",
+								"~alarmQuery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm-查询照明系统(带条件)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:AlarmFilter\">\r\n  <int name=\"limit\" val=\"1\"/>\r\n  <abstime name='start' val='2021-12-08T10:30:00.000+08:00'/>\r\n  <abstime name='end' val='2021-12-08T11:00:00.000+08:00'/>\r\n</obj>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/config/Services/AlarmService/Lighting/~alarmQuery/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"config",
+								"Services",
+								"AlarmService",
+								"Lighting",
+								"~alarmQuery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm-查询全部",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/obix/config/Services/AlarmService/~alarmQuery/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"config",
+								"Services",
+								"AlarmService",
+								"~alarmQuery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm-查询全部(带条件）",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:AlarmFilter\">\r\n  <int name=\"limit\" val=\"10\"/>\r\n  <abstime name='start' val='2021-12-08T10:30:00.000+08:00'/>\r\n  <abstime name='end' val='2021-12-08T11:00:00.000+08:00'/>\r\n</obj>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/config/Services/AlarmService/~alarmQuery/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"config",
+								"Services",
+								"AlarmService",
+								"~alarmQuery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alarm 确认报警",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:AckAlarmIn\">  \r\n  <str name=\"ackUser\" val=\"obix\"/>\r\n</obj>\r\n"
+						},
+						"url": {
+							"raw": "http://localhost/obix/alarm/df765fdf-6a68-46b0-9e22-35e89e0b83c9/ack",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"alarm",
+								"df765fdf-6a68-46b0-9e22-35e89e0b83c9",
+								"ack"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "History-Query",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/histories/obixServer/publicData_Ramp/~historyQuery?start=2021-12-06T00:00:00.000+08:00&end=2021-12-06T20:14:12.433+08:00&limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"histories",
+								"obixServer",
+								"publicData_Ramp",
+								"~historyQuery"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2021-12-06T00:00:00.000+08:00"
+								},
+								{
+									"key": "end",
+									"value": "2021-12-06T20:14:12.433+08:00"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History-Query(Post)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:HistoryFilter\">\r\n  <int name=\"limit\" val=\"5\"/>\r\n  <abstime name=\"start\" val=\"2021-12-06T00:00:00.000+08:00\"/>\r\n</obj>"
+						},
+						"url": {
+							"raw": "https://localhost/obix/histories/obixServer/Ramp/~historyQuery/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"histories",
+								"obixServer",
+								"Ramp",
+								"~historyQuery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History-Rollup",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:HistoryFilter\">\r\n  <int name=\"limit\" val=\"5\"/>\r\n  <abstime name=\"start\" val=\"2021-12-06T00:00:00.000+08:00\"/>\r\n  <abstime name=\"end\" val=\"2021-12-08T20:14:12.433+08:00\"/>\r\n  <reltime name=\"interval\" val=\"PT1H\"/>\r\n</obj>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/histories/obixServer/publicData_Ramp/~historyRollup/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"histories",
+								"obixServer",
+								"publicData_Ramp",
+								"~historyRollup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History-Rollup BigData",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is='obix:HistoryFilter'>\r\n  <abstime name='start' val='2021-01-01T00:00:00.000+08:00' tz='Asia/Shanghai'/>\r\n  <abstime name='end' val='2021-02-01T00:00:00.000+08:00' tz='Asia/Shanghai'/>\r\n  <reltime name='interval' val='PT1D'/>\r\n</obj>"
+						},
+						"url": {
+							"raw": "https://localhost/obix/histories/obixServer/temp/~historyRollup/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"histories",
+								"obixServer",
+								"temp",
+								"~historyRollup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History-创建Watch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/make/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"make",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History-订阅历史",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:WatchIn\">\r\n  <list names=\"hrefs\">\r\n    <uri val=\"/obix/histories/obixServer/Ramp/~historyFeed/\" />\r\n  </list>\r\n</obj>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History-Poll Changes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/obix/watchService/watch{{watchid}}/pollChanges/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"watchService",
+								"watch{{watchid}}",
+								"pollChanges",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "start",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<str val=\"09:00:00.000\"/>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/config/publicData/NumericSchedule/schedule/week/monday/day/time/start/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"config",
+								"publicData",
+								"NumericSchedule",
+								"schedule",
+								"week",
+								"monday",
+								"day",
+								"time",
+								"start",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "finish",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<str val=\"19:00:00.000\"/>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/config/publicData/NumericSchedule/schedule/week/monday/day/time/finish/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"config",
+								"publicData",
+								"NumericSchedule",
+								"schedule",
+								"week",
+								"monday",
+								"day",
+								"time",
+								"finish",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "value",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Admin12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "obix",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj>\r\n <real name=\"value\" val=\"12\"/>\r\n <str name=\"status\" val=\"0\"/>\r\n</obj>"
+						},
+						"url": {
+							"raw": "http://localhost/obix/config/publicData/NumericSchedule/schedule/week/monday/day/time/effectiveValue/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"obix",
+								"config",
+								"publicData",
+								"NumericSchedule",
+								"schedule",
+								"week",
+								"monday",
+								"day",
+								"time",
+								"effectiveValue",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "obix",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost/obix/config/publicData/Ramp/out/value",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"obix",
+						"config",
+						"publicData",
+						"Ramp",
+						"out",
+						"value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Writable Point 控制",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "obix",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<real val=\"12\"/>"
+				},
+				"url": {
+					"raw": "http://localhost/obix/config/Drivers/ObixNetwork/exports/NumericWritable/writePoint/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"obix",
+						"config",
+						"Drivers",
+						"ObixNetwork",
+						"exports",
+						"NumericWritable",
+						"writePoint",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "设置属性",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "obix",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<real val=\"150\"/>"
+				},
+				"url": {
+					"raw": "http://localhost/obix/config/publicData/Ramp/offset/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"obix",
+						"config",
+						"publicData",
+						"Ramp",
+						"offset",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "执行Action",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "obix",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " <obj>\r\n  <reltime name=\"duration\" val=\"PT1M0S\"/>\r\n  <real name=\"value\" val=\"10.0\"/>\r\n </obj>"
+				},
+				"url": {
+					"raw": "http://localhost/obix/config/publicData/input/override/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"obix",
+						"config",
+						"publicData",
+						"input",
+						"override",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "批处理",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "obix",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<list is=\"obix:BatchIn\"> \r\n  <uri is=\"obix:Invoke\" val=\"http://127.0.0.1/obix/config/publicData/input/emergencyOverride/\">\r\n    <real name=\"in\" val=\"1\" />\r\n  </uri>\r\n  <uri is=\"obix:Write\" val=\"http://127.0.0.1/obix/config/publicData/input/in2/value\">\r\n    <real name=\"in\" val=\"23\" />\r\n  </uri>\r\n  <uri is=\"obix:Read\" val=\"http://127.0.0.1/obix/config/publicData/input/out/value/\" />\r\n</list>\r\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1/obix/batch/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"obix",
+						"batch",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "批处理（多个read）",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "obix",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<list is=\"obix:BatchIn\"> \r\n  <uri is=\"obix:Read\" val=\"/obix/config/data/Ramp1/out/value/\" />\r\n  <uri is=\"obix:Read\" val=\"/obix/config/data/Ramp2/out/value/\" />\r\n  <uri is=\"obix:Read\" val=\"/obix/config/data/Ramp3/out/value/\" />\r\n</list>\r\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1/obix/batch/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"obix",
+						"batch",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "obix",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<str val=\"slot:/|bql:select * from baja:Folder\"/>"
+				},
+				"url": {
+					"raw": "https://localhost/obix/config/Program/ObixQuery/query/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"obix",
+						"config",
+						"Program",
+						"ObixQuery",
+						"query",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Admin12345",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "obix",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

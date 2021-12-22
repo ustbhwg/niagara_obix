@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Niagara Presentation XML -->
+<px version="1.0" media="workbench:WbPxMedia">
+<import>
+  <module name="baja"/>
+  <module name="bajaui"/>
+  <module name="gx"/>
+</import>
+<content>
+<ScrollPane>
+
+  <CanvasPane name="content" viewSize="800.0,600.0" scale="fit" minScaleFactor="0.5" maxScaleFactor="1.0">
+
+    <Label layout="110.0,80.0,260.0,90.0" text="Go to Obix Lobby &#x300b;" font="28.0pt SansSerif" foreground="blue">
+      <ValueBinding hyperlink="http://localhost/obix"/>
+    </Label>
+
+  </CanvasPane>
+
+</ScrollPane>
+</content>
+</px>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nav version='1.0'>
+<node name='Home' ord='file:^HtmlFile.html' icon='module://icons/x16/home.png'>
+  <node name='Lighting' ord='station:|slot:/' icon='module://icons/x16/folder.png'/>
+  <node name='HVAC' ord='station:|slot:/' icon='module://icons/x16/folder.png'/>
+  <node name='Alarm' ord='station:|slot:/' icon='module://icons/x16/folder.png'/>
+</node>
+</nav>
